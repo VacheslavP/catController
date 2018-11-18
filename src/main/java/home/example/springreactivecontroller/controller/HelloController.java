@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 @Controller
 public class HelloController implements HelloApiDelegate {
 	@Override
-	public Mono<ResponseEntity<String>> hello(ServerWebExchange exchange) {
+	public Mono<ResponseEntity<String>> helloWorld(ServerWebExchange exchange) {
 		return Mono.just(
 				ResponseEntity.ok("World!")
 		);

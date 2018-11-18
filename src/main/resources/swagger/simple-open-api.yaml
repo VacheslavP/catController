@@ -8,8 +8,8 @@ servers:
 paths:
   /hello:
     get:
-      description: hello
-      operationId: hello
+      description: hello world!
+      operationId: helloWorld
       responses:
         200:
           content:
