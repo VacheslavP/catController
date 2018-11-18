@@ -67,14 +67,11 @@
 						</goals>
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/swagger/simple-open-api.yaml</inputSpec>
-							<generatorName>spring</generatorName>
 							<output>${generated.sources.basedir}</output>
+							<generatorName>spring</generatorName>
 							<apiPackage>${default.package}.controller</apiPackage>
-							<modelPackage>${default.package}.model</modelPackage>
 							<ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>
 							<configOptions>
-								<dateLibrary>java8</dateLibrary>
-								<serializeableModel>true</serializeableModel>
 								<delegatePattern>true</delegatePattern>
 								<reactive>true</reactive>
 							</configOptions>
