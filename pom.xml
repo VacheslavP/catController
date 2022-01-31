@@ -66,10 +66,11 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/swagger/simple-open-api.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/swagger/openapi.json</inputSpec>
 							<output>${generated.sources.basedir}</output>
 							<generatorName>spring</generatorName>
 							<apiPackage>${default.package}.controller</apiPackage>
+							<modelPackage>${default.package}.model</modelPackage>
 							<ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>
 							<configOptions>
 								<delegatePattern>true</delegatePattern>
