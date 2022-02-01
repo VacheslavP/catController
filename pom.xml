@@ -14,7 +14,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -28,9 +28,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
@@ -42,11 +41,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -66,7 +62,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/swagger/openapi.json</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/swagger/api.yaml</inputSpec>
 							<output>${generated.sources.basedir}</output>
 							<generatorName>spring</generatorName>
 							<apiPackage>${default.package}.controller</apiPackage>
@@ -74,7 +70,7 @@
 							<ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>
 							<configOptions>
 								<delegatePattern>true</delegatePattern>
-								<reactive>true</reactive>
+								<reactive>false</reactive>
 							</configOptions>
 						</configuration>
 					</execution>

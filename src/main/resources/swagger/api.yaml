@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: http://127.0.0.1:8080
+    description: Optional server description, e.g. Main (production) server
+paths:
+  /api/cat:
+    get:
+      summary: return Cat.
+      responses:
+        '200':    # status code
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cat'
+
+components:
+  schemas:
+    Cat:
+      type: object
+      properties:
+        name:
+          type: string
+          example: vasya
+        age:
+          type: integer
+          format: int64
+          example: 14
+        place:
+          $ref: '#/components/schemas/Place'
+    Place:
+      type: object
+      properties:
+        city:
+          type: string
+          example: Moscow
